@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-const Navbar = () => {
+
+const Navbar: React.FC = () => {
+  
     return (
         <nav className='flex justify-between items-center p-4 bg-base-100 text-base-content'>
             <div>
@@ -9,9 +11,17 @@ const Navbar = () => {
             </div>
             <div>
                 <ul className='flex gap-4 text-lg'>
-                    <li>Home</li>
-                    <li>
-                        <Link to="/Favourites">Favourites</Link>
+                    <li
+                        className="cursor-pointer"
+                       
+                    >
+                        <NavLink to={'/'}>Home</NavLink>
+                    </li>
+                    <li
+                        className="cursor-pointer"
+                       
+                    >
+                        <NavLink to={'/favorites'}>Favorites</NavLink>
                     </li>
 
                 </ul>

@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import Cast from "./Cast";
 import Trailer from "./Trailer";
+import Posters from "./Posters";
 
 
 const MovieDetails = () => {
@@ -84,6 +85,7 @@ const MovieDetails = () => {
       </div>
       <Cast movieId={movie_id!} />
       <Trailer movieId={movie_id!} />
+      <Posters movieId={movie_id!} />
     </>
   );
 };

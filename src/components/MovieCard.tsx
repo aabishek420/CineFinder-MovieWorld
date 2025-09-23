@@ -1,12 +1,13 @@
 import React from 'react'
 import { CiStar } from "react-icons/ci";
-import useFavorites from '../pages/UseFavorites';
 import { FaHeart } from "react-icons/fa";
+import { useFavourites } from '../contexts/FavouriteContext';
 
 
 
 const MovieCard:React.FC<MovieCardProps> = ({movie}) => {
-     const { toggleFavorite, isFavorite } = useFavorites();
+     
+    const {addToFavourites,isFavorite} = useFavourites();
 
     const getReleaseYear = (datestring:string)=>{
         const year = datestring.split('-')[0];
@@ -18,7 +19,8 @@ const MovieCard:React.FC<MovieCardProps> = ({movie}) => {
          <button
         onClick={(e) => {
           e.preventDefault();
-          toggleFavorite(movie.id);
+          addToFavourites(movie);
+
         }}
         className="absolute top-2 right-2"
       >

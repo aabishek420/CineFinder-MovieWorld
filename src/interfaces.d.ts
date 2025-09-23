@@ -15,13 +15,11 @@ interface MovieCardProps {
     movie: Movie;
 }
 
-interface ALlMovieCardProps {
+interface AllMovieCardProps {
     movie: Movie;
 }
 
-interface FavouritesProps {
-  movies: Movie[];
-}
+
 
 interface CastMember {
   id: number;
@@ -45,5 +43,22 @@ interface Video {
 }
 
  interface TrailerProps {
+  movieId: string;
+}
+
+interface MovieImage {
+  file_path: string;
+  width: number;
+  height: number;
+  iso_639_1: string | null;
+}
+
+interface MovieImagesResponse {
+  backdrops: MovieImage[];
+  posters: MovieImage[];
+}
+
+
+interface PosterProps {
   movieId: string;
 }
