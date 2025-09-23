@@ -1,0 +1,55 @@
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+import MovieCard from '../components/MovieCard';
+
+const FilterResults = () => {
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+
+  const genre = params.get('genre');
+  const year = params.get('year');
+  const rating = params.get('rating');
+
+  const fetchFilteredMovies = async () => {
+    const queryParams = new URLSearchParams();
+    if (genre) queryParams.append('with_genres', genre);
+    if (year) queryParams.append('primary_release_year', year);
+    if (rating) queryParams.append('vote_average.gte', String(Number(rating) * 2)); 
+    const res = await axios.get(
+      `${import.meta.env.VITE_API_BASE_URL}/discover/movie?${queryParams.toString()}`,
+      {
+        headers: {
+          Authorization: `Bearer ${import.meta.env.VITE_API_PUBLIC_KEY}`,
+        },
+      }
+    );
+
+    return res.data.results;
+  };
+
+  const { data: movies, isLoading, error } = useQuery(
+    ['filteredMovies', genre, year, rating],
+    fetchFilteredMovies
+  );
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error loading movies</div>;
+  if (!movies || movies.length === 0) return <div>No movies found</div>;
+
+  return (
+    <div>
+      <h2>Filtered Movies</h2>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
+        {movies.map((movie: any) => (
+          <div key={movie.id}>
+            <MovieCard movie={movie} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default FilterResults;

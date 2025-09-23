@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import MovieCard from '../components/MovieCard';
 import AllMovie from './AllMovie';
+import SearchBar from '../components/SearchBar';
+import FilterPanel from '../components/FilterPanel';
 
 
 const Home = () => {
@@ -30,6 +32,8 @@ const Home = () => {
     <>
   
     <div className='p-10'>
+      <SearchBar />
+      <FilterPanel />
       <h1 className='text-3xl font-bold mb-5'>Trending Movies</h1>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {data?.map((movie) => (

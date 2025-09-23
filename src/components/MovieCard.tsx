@@ -2,20 +2,26 @@ import React from 'react'
 import { CiStar } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import { useFavourites } from '../contexts/FavouriteContext';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const MovieCard:React.FC<MovieCardProps> = ({movie}) => {
+
+  const navigate = useNavigate();
      
     const {addToFavourites,isFavorite} = useFavourites();
 
     const getReleaseYear = (datestring:string)=>{
+      if (!datestring) return 'N/A';
         const year = datestring.split('-')[0];
         return year;
     }
 
   return (
-    <div className='bg-base-100 p-2 rounded-lg shadow-md flex flex-col items-center justify-center gap-2 hover:scale-103 cursor-pointer transition-transform relative'>
+    <div className='bg-base-100 p-2 rounded-lg shadow-md flex flex-col items-center justify-center gap-2 hover:scale-103 cursor-pointer transition-transform relative'
+      onClick={()=> navigate(`/movie/${movie.id}`)}
+    >
          <button
         onClick={(e) => {
           e.preventDefault();

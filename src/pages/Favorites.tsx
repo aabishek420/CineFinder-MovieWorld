@@ -1,5 +1,6 @@
 import React from "react";
 import { useFavourites } from "../contexts/FavouriteContext";
+import MovieCard from "../components/MovieCard";
 
 export const Favorites = () => {
   const { favourites,addToFavourites,isFavorite } = useFavourites();
@@ -17,31 +18,7 @@ export const Favorites = () => {
               key={movie.id}
               className="bg-base-100 rounded-lg shadow-md p-2 flex flex-col items-center relative"
             >
-              Favorite toggle
-              <button
-                onClick={() => addToFavourites(movie)}
-                className="absolute top-2 right-2"
-              >
-                <span
-                  className={`text-lg ${
-                    isFavorite(movie.id) ? "text-red-500" : "text-gray-400"
-                  }`}
-                >
-                  ♥
-                </span>
-              </button>
-
-              {/* Poster */}
-              <img
-                className="w-40 rounded"
-                src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-                alt={movie.title}
-              />
-
-              {/* Title */}
-              <h2 className="text-sm font-bold mt-2 text-center">
-                {movie.title}
-              </h2>
+              <MovieCard movie={movie} />
             </div>
           ))}
         </div>

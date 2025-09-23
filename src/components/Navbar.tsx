@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
     return (
         <nav className='flex justify-between items-center p-4 bg-base-100 text-base-content'>
             <div>
-                <h1 className='text-3xl'>CineFinder</h1>
+                <h1 className='text-3xl'><a href="/">CineFinder</a></h1>
             </div>
             <div>
                 <ul className='flex gap-4 text-lg'>
