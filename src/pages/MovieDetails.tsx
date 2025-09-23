@@ -3,6 +3,7 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import Cast from "./Cast";
+import Trailer from "./Trailer";
 
 
 const MovieDetails = () => {
@@ -82,6 +83,7 @@ const MovieDetails = () => {
         </div>
       </div>
       <Cast movieId={movie_id!} />
+      <Trailer movieId={movie_id!} />
     </>
   );
 };

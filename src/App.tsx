@@ -9,6 +9,7 @@ const App = () => {
         <Routes>
             <Route path='/' element={<Home/>} />
             <Route path="/movie/:movie_id" element={<MovieDetails />} />
+       
         </Routes>
     </BrowserRouter>
   )

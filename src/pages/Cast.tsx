@@ -29,13 +29,13 @@ const Cast: React.FC<CastProps> = ({ movieId }) => {
   if (!data) return null;
 
   return (
-    <div className=" bg-base-100 p-5">
+    <div className=" bg-base-100 py-6">
       <h2 className=" mx-5 text-xl font-bold mb-4">Top Cast</h2>
-      <div className="flex gap-6 overflow-x-auto pb-4">
+      <div className="flex gap-6 overflow-x-auto pb-4 px-6">
         {data.slice(0, 10).map((actor) => (
           <div
             key={actor.id}
-            className="w-32 flex-shrink-0 text-center text-white"
+            className=" w-32 flex-shrink-0 text-center"
           >
             <img
               src={
@@ -46,8 +46,8 @@ const Cast: React.FC<CastProps> = ({ movieId }) => {
               alt={actor.name}
               className="w-32 h-48 object-cover rounded-lg shadow-md"
             />
-            <p className="mt-2 text-black font-bold text-sm">{actor.name}</p>
-           <p className="text-xs text-gray-500">{actor.character}</p>
+            <p className="text-sm mt-2 font-semibold">{actor.name}</p>
+           <p className="text-sm">{actor.character}</p>
           </div>
         ))}
       </div>

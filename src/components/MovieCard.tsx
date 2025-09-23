@@ -1,9 +1,12 @@
 import React from 'react'
 import { CiStar } from "react-icons/ci";
+import useFavorites from '../pages/UseFavorites';
+import { FaHeart } from "react-icons/fa";
 
 
 
 const MovieCard:React.FC<MovieCardProps> = ({movie}) => {
+     const { toggleFavorite, isFavorite } = useFavorites();
 
     const getReleaseYear = (datestring:string)=>{
         const year = datestring.split('-')[0];
@@ -12,6 +15,19 @@ const MovieCard:React.FC<MovieCardProps> = ({movie}) => {
 
   return (
     <div className='bg-base-100 p-2 rounded-lg shadow-md flex flex-col items-center justify-center gap-2 hover:scale-103 cursor-pointer transition-transform relative'>
+         <button
+        onClick={(e) => {
+          e.preventDefault();
+          toggleFavorite(movie.id);
+        }}
+        className="absolute top-2 right-2"
+      >
+       <FaHeart
+          className={`w-5 h-5 ${
+            isFavorite(movie.id) ? "text-red-500" : "text-gray-400"
+          }`}
+        />
+      </button>
         <img className='w-50' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`${movie.title}`} />
         <h2 className='text-sm truncate w-50 text-center font-bold'>{movie.title}</h2>
         <div className='flex justify-between w-full px-2 text-sm items-center px-8'>
