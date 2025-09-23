@@ -1,6 +1,6 @@
 import React from 'react'
 import { CiStar } from "react-icons/ci";
-import { TbRating18Plus } from "react-icons/tb";
+
 
 
 const MovieCard:React.FC<MovieCardProps> = ({movie}) => {
