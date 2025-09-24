@@ -7,16 +7,15 @@ export const Favorites = () => {
 
   return (
     <div className="p-4">
-      <h1 className="text-xl font-bold mb-4">My Favorites</h1>
+      <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 text-center">My Favorites</h1>
 
       {favourites.length === 0 ? (
-        <p>No favorite movies yet.</p>
+        <p className="text-center text-base-content/80">No favorite movies yet.</p>
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {favourites.map((movie:any) => (
             <div
               key={movie.id}
-              className="bg-base-100 rounded-lg shadow-md p-2 flex flex-col items-center relative"
             >
               <MovieCard movie={movie} />
             </div>
