@@ -43,15 +43,15 @@ const MovieDetails = () => {
       >
         <div className="absolute inset-0 bg-black/70"></div>
 
-        <div className="relative flex gap-8 z-10 max-w-6xl mx-auto text-white">
+        <div className="relative flex items-center flex-col lg:flex-row gap-8 z-10 max-w-6xl mx-auto text-white">
           <img
             src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
             alt={data.title}
-            className="w-64 rounded-lg shadow-lg "
+            className="w-54 lg:w-67 rounded-lg shadow-lg "
           />
           <div className="max-w-3xl">
 
-            <h1 className="text-4xl font-bold">
+            <h1 className="text-lg md:text-xl lg:text-2xl xl:text-4xl mb-4 font-bold">
               {data.title}
               <span className="text-gray-300 text-2xl">
                 ({new Date(data.release_date).getFullYear()})
@@ -70,7 +70,7 @@ const MovieDetails = () => {
 
             <div className="mt-6">
               <h2 className="text-xl font-semibold">Overview</h2>
-              <p className="mt-2 text-gray-200">{data.overview}</p>
+              <p className="mt-2 text-gray-200 text-justify">{data.overview}</p>
             </div>
 
 

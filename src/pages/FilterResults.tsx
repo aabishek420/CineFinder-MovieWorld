@@ -40,8 +40,8 @@ const FilterResults = () => {
 
   return (
     <div>
-      <h2 className='text-3xl font-bold m-5'>Filtered Movies</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
+      <h2 className='text-lg md:text-xl lg:text-3xl font-bold m-5 text-center'>Filtered Movies</h2>
+      <div className='grid grid-cols md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-10'>
         {movies.map((movie: any) => (
           <div key={movie.id}>
             <MovieCard movie={movie} />

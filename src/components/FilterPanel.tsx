@@ -32,8 +32,8 @@ const FilterPanel = () => {
 
   return (
     <div>
-    <div className='flex items-center justify-center gap-4'>
-      <div className='bg-base-100 items-center justify-center  inline-flex p-4 mb-6  rounded-full shadow-md'>
+    <div className='grid grid-cols md:grid-cols-2 lg:grid-cols-4 gap-4 '>
+      <div className='bg-base-100 items-center justify-center font-semibold inline-flex p-3 mb-6  rounded-full shadow-md hover:shadow-lg transition-shadow duration-300'>
         <select value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)}>
           <option value="">Sort by Genre</option>
           {genres?.map((genre : any) => (
@@ -41,7 +41,7 @@ const FilterPanel = () => {
           ))}
         </select>
       </div >
-      <div className='bg-base-100 items-center justify-center inline-flex p-4 mb-6 rounded-full shadow-md'>
+      <div className='bg-base-100 items-center justify-center font-semibold inline-flex p-3 mb-6 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300'>
         <select value={selectedYear} onChange={(e) => setSelectedYear(e.target.value)}>
           <option value="">Sort by Year</option>
           {Array.from({ length: 123 }, (_, i) => 2025 - i).map(year => (
@@ -49,7 +49,7 @@ const FilterPanel = () => {
           ))}
         </select>
       </div>
-      <div className='bg-base-100 items-center justify-center inline-flex p-4 mb-6 rounded-full shadow-md'>
+      <div className='bg-base-100 items-center justify-center font-semibold inline-flex p-3 mb-6 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300'>
         <select value={selectedRating} onChange={(e) => setSelectedRating(e.target.value)}>
           <option value="">Sort by Rating</option>
           {Array.from({ length: 5 }, (_, i) => 5 - i).map(rating => (
@@ -57,8 +57,11 @@ const FilterPanel = () => {
           ))}
         </select>
       </div>
-      <div className='bg-base-200 items-center justify-center  inline-flex p-4 mb-6 rounded-full shadow-md hover:bg-blend-hard-light'>
-         <button onClick={handleFilter}>Apply Filters</button>
+      <div 
+      className='bg-primary text-primary-content cursor-pointer items-center justify-center font-semibold inline-flex p-3 mb-6 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300'
+      onClick={handleFilter}
+      >
+         <button className='cursor-pointer'>Apply Filters</button>
       </div>
      </div>
     </div>

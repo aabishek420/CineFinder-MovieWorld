@@ -20,7 +20,7 @@ const SearchBar = () => {
   return (
     <div className='flex flex-col justify-center p-4 gap-5 py-10'>
       <div>
-        <h1 className='text-center text-3xl font-bold'>Find The Movies You Love</h1>
+        <h1 className='text-center text-3xl font-bold text-primary'>Find The Movies You Love</h1>
       </div>
       <form className='bg-base-100 flex items-center gap-2 border border-gray-300 rounded-lg p-2 mt-2'
         onSubmit={handleSubmit}
