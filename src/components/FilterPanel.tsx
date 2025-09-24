@@ -34,7 +34,9 @@ const FilterPanel = () => {
     <div>
     <div className='grid grid-cols md:grid-cols-2 lg:grid-cols-4 gap-4 '>
       <div className='bg-base-100 items-center justify-center font-semibold inline-flex p-3 mb-6  rounded-full shadow-md hover:shadow-lg transition-shadow duration-300'>
-        <select value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)}>
+        <select value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)}
+          className='bg-base-100 border-none focus:outline-none'
+          >
           <option value="">Sort by Genre</option>
           {genres?.map((genre : any) => (
             <option key={genre.id} value={genre.id}>{genre.name}</option>
@@ -42,7 +44,9 @@ const FilterPanel = () => {
         </select>
       </div >
       <div className='bg-base-100 items-center justify-center font-semibold inline-flex p-3 mb-6 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300'>
-        <select value={selectedYear} onChange={(e) => setSelectedYear(e.target.value)}>
+        <select value={selectedYear} onChange={(e) => setSelectedYear(e.target.value)}
+          className='bg-base-100 border-none focus:outline-none'
+          >
           <option value="">Sort by Year</option>
           {Array.from({ length: 123 }, (_, i) => 2025 - i).map(year => (
             <option key={year} value={year}>{year}</option>
@@ -50,7 +54,9 @@ const FilterPanel = () => {
         </select>
       </div>
       <div className='bg-base-100 items-center justify-center font-semibold inline-flex p-3 mb-6 rounded-full shadow-md hover:shadow-lg transition-shadow duration-300'>
-        <select value={selectedRating} onChange={(e) => setSelectedRating(e.target.value)}>
+        <select value={selectedRating} onChange={(e) => setSelectedRating(e.target.value)}
+          className='bg-base-100 border-none focus:outline-none'
+          >
           <option value="">Sort by Rating</option>
           {Array.from({ length: 5 }, (_, i) => 5 - i).map(rating => (
             <option key={rating} value={rating}>{rating}+</option>
