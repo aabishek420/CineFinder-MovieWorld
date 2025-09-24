@@ -1,17 +1,17 @@
 import React, { createContext, useEffect, useContext, useState } from "react";
 
 // Create Context
-export const FavouritesContext = createContext();
+export const FavouritesContext = createContext<any>(null);
 
 // Custom Hook
 export const useFavourites = () => useContext(FavouritesContext);
 
 // Provider Component
-const FavouritesProvider = ({ children }) => {
-  const [favourites, setFavourites] = useState([]);
+const FavouritesProvider = ({ children } : any) => {
+ const [favourites, setFavourites] = useState<Movie[]>([]);
 
-  // Add movie to favourites
-  const addToFavourites = (movie) => {
+
+  const addToFavourites = (movie : any) => {
     if (isFavorite(movie.id)){
       removeFromFavourites(movie.id);
       return;
@@ -20,11 +20,11 @@ const FavouritesProvider = ({ children }) => {
   };
 
   // Remove movie by ID
-  const removeFromFavourites = (movieId) => {
-    setFavourites((prev) => prev.filter((movie) => movie.id !== movieId));
+  const removeFromFavourites = (movieId : number) => {
+    setFavourites((prev ) => prev.filter((movie) => movie.id !== movieId));
   };
 
-  const isFavorite = (movieId) => {
+  const isFavorite = (movieId:number) => {
     return favourites.some((movie) => movie.id === movieId);
   }
 

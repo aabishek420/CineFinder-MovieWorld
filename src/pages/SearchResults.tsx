@@ -28,7 +28,7 @@ const SearchResults = () => {
         enabled: !!searchTerm
     });
     if (isLoading) return <div>Loading...</div>
-    if (error) return <div>Error: {error.message}</div>
+   if (error) return <div>Error: {(error as Error)?.message || String(error)}</div>;
     if (!data || data.length === 0) return <div>No results found for "{searchTerm}"</div>
 
 
@@ -41,7 +41,7 @@ const SearchResults = () => {
                 
             >
                 {
-                data.map((movie) => (
+                data.map((movie : any) => (
                     <div onClick={()=> navigate(`/movie/${movie.id}`)} key={movie.id}>
                         <MovieCard 
                      

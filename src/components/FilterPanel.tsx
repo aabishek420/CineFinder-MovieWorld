@@ -32,15 +32,16 @@ const FilterPanel = () => {
 
   return (
     <div>
-      <div>
+    <div className='flex items-center justify-center gap-4'>
+      <div className='bg-base-100 items-center justify-center  inline-flex p-4 mb-6  rounded-full shadow-md'>
         <select value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)}>
           <option value="">Sort by Genre</option>
-          {genres?.map((genre) => (
+          {genres?.map((genre : any) => (
             <option key={genre.id} value={genre.id}>{genre.name}</option>
           ))}
         </select>
-      </div>
-      <div>
+      </div >
+      <div className='bg-base-100 items-center justify-center inline-flex p-4 mb-6 rounded-full shadow-md'>
         <select value={selectedYear} onChange={(e) => setSelectedYear(e.target.value)}>
           <option value="">Sort by Year</option>
           {Array.from({ length: 123 }, (_, i) => 2025 - i).map(year => (
@@ -48,7 +49,7 @@ const FilterPanel = () => {
           ))}
         </select>
       </div>
-      <div>
+      <div className='bg-base-100 items-center justify-center inline-flex p-4 mb-6 rounded-full shadow-md'>
         <select value={selectedRating} onChange={(e) => setSelectedRating(e.target.value)}>
           <option value="">Sort by Rating</option>
           {Array.from({ length: 5 }, (_, i) => 5 - i).map(rating => (
@@ -56,7 +57,10 @@ const FilterPanel = () => {
           ))}
         </select>
       </div>
-      <button onClick={handleFilter}>Apply Filters</button>
+      <div className='bg-base-200 items-center justify-center  inline-flex p-4 mb-6 rounded-full shadow-md hover:bg-blend-hard-light'>
+         <button onClick={handleFilter}>Apply Filters</button>
+      </div>
+     </div>
     </div>
   );
 };

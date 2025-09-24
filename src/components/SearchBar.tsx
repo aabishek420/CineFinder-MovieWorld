@@ -10,7 +10,7 @@ const SearchBar = () => {
 
     const navigate = useNavigate();
 
-    const handleSubmit = (e)=>{
+    const handleSubmit = (e:any)=>{
         e.preventDefault();
         if(query.trim() === '') return;
         navigate(`/search?query=${query}`);
@@ -22,7 +22,7 @@ const SearchBar = () => {
       <div>
         <h1 className='text-center text-3xl font-bold'>Find The Movies You Love</h1>
       </div>
-      <form className='flex items-center gap-2 border border-gray-300 rounded-lg p-2 mt-2'
+      <form className='bg-base-100 flex items-center gap-2 border border-gray-300 rounded-lg p-2 mt-2'
         onSubmit={handleSubmit}
       >
         <CiSearch /> 

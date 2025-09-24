@@ -25,6 +25,7 @@ const MovieCard:React.FC<MovieCardProps> = ({movie}) => {
          <button
         onClick={(e) => {
           e.preventDefault();
+          e.stopPropagation();
           addToFavourites(movie);
 
         }}

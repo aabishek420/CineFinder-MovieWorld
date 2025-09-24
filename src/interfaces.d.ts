@@ -2,13 +2,14 @@ interface Movie {
   id: number;
   title: string;
   overview: string;
-  poster_path: string;
   backdrop_path: string;
   release_date: string;
   vote_average: number;
    adult: boolean;
   runtime: number;
   genres: { id: number; name: string }[];
+  poster_path?: string;
+  [key: string]: any;
 }
 
 interface MovieCardProps {
@@ -62,3 +63,4 @@ interface MovieImagesResponse {
 interface PosterProps {
   movieId: string;
 }
+

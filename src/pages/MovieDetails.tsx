@@ -3,8 +3,8 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import Cast from "./Cast";
-import Trailer from "./Trailer";
-import Posters from "./Posters";
+import Trailer from "../components/Trailer";
+// import Posters from "./Posters";
 
 
 const MovieDetails = () => {
@@ -35,8 +35,6 @@ const MovieDetails = () => {
 
   return (
     <>
-
-
       <div
         className="relative min-h-screen bg-cover bg-center flex items-center p-6"
         style={{
@@ -85,7 +83,7 @@ const MovieDetails = () => {
       </div>
       <Cast movieId={movie_id!} />
       <Trailer movieId={movie_id!} />
-      <Posters movieId={movie_id!} />
+      {/* <Posters movieId={movie_id!} /> */}
     </>
   );
 };

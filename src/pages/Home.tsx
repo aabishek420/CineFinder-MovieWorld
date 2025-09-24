@@ -1,9 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios'
 import { Link } from "react-router-dom";
-
 import MovieCard from '../components/MovieCard';
-import AllMovie from './AllMovie';
 import SearchBar from '../components/SearchBar';
 import FilterPanel from '../components/FilterPanel';
 
@@ -42,9 +40,7 @@ const Home = () => {
           </Link>
         ))}
       </div>
-     </div>
-    <AllMovie />
-    
+     </div>   
       </>
   )
 }
