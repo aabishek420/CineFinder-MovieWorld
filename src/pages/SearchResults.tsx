@@ -3,6 +3,8 @@ import axios from 'axios';
 import React from 'react'
 import MovieCard from '../components/MovieCard';
 import { useNavigate } from 'react-router-dom';
+import CardSkeleton from '../Skeletons/CardSkeleton';
+import FilterSkeleton from '../Skeletons/FilterSkeleton';
 
 const SearchResults = () => {
 
@@ -27,7 +29,7 @@ const SearchResults = () => {
         queryFn: fetchSearchResults,
         enabled: !!searchTerm
     });
-    if (isLoading) return <div>Loading...</div>
+    if (isLoading) return <FilterSkeleton />;
    if (error) return <div>Error: {(error as Error)?.message || String(error)}</div>;
     if (!data || data.length === 0) return <div>No results found for "{searchTerm}"</div>
 

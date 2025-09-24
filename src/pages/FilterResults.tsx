@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import MovieCard from '../components/MovieCard';
+import CardSkeleton from '../Skeletons/CardSkeleton';
+import FilterSkeleton from '../Skeletons/FilterSkeleton';
 
 const FilterResults = () => {
   const location = useLocation();
@@ -34,7 +36,7 @@ const FilterResults = () => {
     fetchFilteredMovies
   );
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <FilterSkeleton />;
   if (error) return <div>Error loading movies</div>;
   if (!movies || movies.length === 0) return <div>No movies found</div>;
 

@@ -1,15 +1,36 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { FaBars } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import { GiFilmProjector } from "react-icons/gi";
 import { IoIosHome } from "react-icons/io";
 import { FaHeart } from "react-icons/fa";
-
+import { FaMoon } from "react-icons/fa";
+import { IoSunny } from "react-icons/io5";
 
 const Navbar: React.FC = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(true);
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setIsDarkMode(savedTheme === 'dark');
+            document.querySelector("#root")?.setAttribute('data-theme', savedTheme);
+        }
+    }, []);
+
+    const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
+        if (!isDarkMode) {
+            document.querySelector("#root")?.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.querySelector("#root")?.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
+    };
   
     return (
         <nav className='flex justify-between items-center p-4 bg-base-100 text-base-content'>
@@ -19,14 +40,43 @@ const Navbar: React.FC = () => {
                 <GiFilmProjector className='text-5xl'/> <span>CineFinder</span>
                 </a></h1> 
             </div>
-            <div>
-                <button onClick={() => setIsMenuOpen(!isMenuOpen)} className='lg:hidden'>
+            <div className='flex gap-4 lg:hidden justify-center items-center'>
+                <div>
+                    {
+                            isDarkMode ? (
+                                <button onClick={toggleDarkMode} className='text-yellow-400'>
+                                    <IoSunny className='w-6 h-6'/>
+                                </button>
+                            ) : (
+                                <button onClick={toggleDarkMode} className='text-primary'>
+                                    <FaMoon className='w-5 h-5'/>
+                                </button>
+                            )
+                        }
+                </div>
+                <div>
+                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className='lg:hidden'>
                     {isMenuOpen ? <IoClose className='w-6 h-6'/> : <FaBars className='w-6 h-6'/>}
                 </button>
+                </div>
             </div>
             <div className='hidden lg:block'>
-                <ul className='flex gap-4 text-lg'>
-                    <li
+                <ul className='flex gap-4 text-lg justify-center items-center'>
+                    <div className='bg-base-300 rounded-full p-2'>
+                        {
+                            isDarkMode ? (
+                                <button onClick={toggleDarkMode} className='text-yellow-400 cursor-pointer flex items-center justify-center'>
+                                    <IoSunny className='w-6 h-6'/>
+                                </button>
+                            ) : (
+                                <button onClick={toggleDarkMode} className='text-primary cursor-pointer flex items-center justify-center'>
+                                    <FaMoon className='w-5 h-5'/>
+                                </button>
+                            )
+                        }
+                    </div>
+                    <div className='flex gap-6'>
+                        <li
                         className="cursor-pointer"
                        
                     >
@@ -39,6 +89,7 @@ const Navbar: React.FC = () => {
                         <NavLink style={{display:'flex', alignItems:'center',gap:'5px',justifyContent:'center'}} className={({isActive})=>isActive ? "text-primary" : ""} to={'/favorites'}><FaHeart/> <span>Favorites</span></NavLink>
                     </li>
 
+                    </div>
                 </ul>
             </div>
 

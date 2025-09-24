@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import Cast from "./Cast";
 import Trailer from "../components/Trailer";
+import MovieDetailsSkeleton from "../Skeletons/MovieDetailsSkeleton";
 // import Posters from "./Posters";
 
 
@@ -29,7 +30,7 @@ const MovieDetails = () => {
     enabled: !!movie_id,
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <MovieDetailsSkeleton />;
   if (error) return <div>Error: {error.message}</div>;
   if (!data) return null;
 

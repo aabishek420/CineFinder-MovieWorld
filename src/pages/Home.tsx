@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import MovieCard from '../components/MovieCard';
 import SearchBar from '../components/SearchBar';
 import FilterPanel from '../components/FilterPanel';
-
+import HomeSkeleton from '../Skeletons/HomeSkeleton';
 
 const Home = () => {
 
@@ -23,7 +23,9 @@ const Home = () => {
     queryFn: fetchTrendingMovies
   })
 
-  if (isLoading) return <div>Loading...</div>
+  if (isLoading) return <div className=''>
+    <HomeSkeleton />
+  </div>
   if (error) return <div>Error: {error.message}</div>
 
   return (
