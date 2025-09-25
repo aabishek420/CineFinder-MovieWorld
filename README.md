@@ -1,6 +1,3 @@
-Great! Thanks for sharing your folder structure. I’ve updated the README’s **Project Structure** section to match your exact setup. Here’s the revised `README.md` for **CineFinder**:
-
-
 # CineFinder 🎬
 
 CineFinder is a modern movie web application built with **React + TypeScript** that allows users to browse trending movies, search and filter by genre, year, or rating, view detailed movie information, and mark favorites. The app uses **TMDb API** for movie data and is styled using **Material UI (MUI)** and **Tailwind CSS**.  
@@ -29,7 +26,7 @@ CineFinder is a modern movie web application built with **React + TypeScript** t
 - **UI Framework:** Material UI (MUI) + Tailwind CSS  
 - **Routing:** React Router v6  
 - **State Management:** Context API  
-- **API Fetching:** Axios (optional: React Query / TanStack Query)  
+- **API Fetching:** Axios (React Query / TanStack Query)  
 - **Build Tool:** Vite (Vite + React + TypeScript template)  
 - **Movie API:** [TMDb API](https://www.themoviedb.org/documentation/api)
 
@@ -69,13 +66,7 @@ CineFinder/
 |--------- README.md
 
 ````
-
 ---
-
-Here’s a polished version of your **Installation & Setup** guide for CineFinder with improved formatting and clarity:
-
----
-
 # ⚙️ Installation & Setup
 
 ## Getting Started
@@ -94,7 +85,7 @@ Make sure you have the following installed on your system:
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/CineFinder.git
+git clone https://github.com/aabishek420/CineFinder-MovieWorld.git
 cd CineFinder
 ```
 
