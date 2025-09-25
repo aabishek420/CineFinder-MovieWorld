@@ -1,9 +1,7 @@
-import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import MovieCard from '../components/MovieCard';
-import CardSkeleton from '../Skeletons/CardSkeleton';
 import FilterSkeleton from '../Skeletons/FilterSkeleton';
 
 const FilterResults = () => {

@@ -1,4 +1,3 @@
-import React from 'react'
 import CardSkeleton from './CardSkeleton'
 import { Skeleton } from '@mui/material'
 
