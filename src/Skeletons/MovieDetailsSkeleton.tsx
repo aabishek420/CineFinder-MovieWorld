@@ -5,7 +5,7 @@ const MovieDetailsSkeleton = () => {
   return (
     <div className='flex flex-col md:flex-row gap-0 items-center justify-center mt-15 p-10'>
         <div>
-            <Skeleton animation="wave" variant='rectangle'
+            <Skeleton animation="wave" variant='rectangular'
                 sx={{
                 height: {
                     xs: 200, 
