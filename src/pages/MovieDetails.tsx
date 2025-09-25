@@ -46,7 +46,7 @@ const MovieDetails = () => {
 
         <div className="relative flex items-center flex-col lg:flex-row gap-8 z-10 max-w-6xl mx-auto text-white">
           <img
-            src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+            src={data.poster_path ?`https://image.tmdb.org/t/p/w500${data.poster_path}`: `https://placehold.co/500x750/png?text=No+Image`}
             alt={data.title}
             className="w-54 lg:w-67 rounded-lg shadow-lg "
           />
