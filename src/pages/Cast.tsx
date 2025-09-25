@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import CastSkeleton from "../Skeletons/CastSkeleton";
 
 
 
@@ -24,7 +25,7 @@ const Cast: React.FC<CastProps> = ({ movieId }) => {
     enabled: !!movieId,
   });
 
-  if (isLoading) return <p>Loading cast...</p>;
+  if (isLoading) return <CastSkeleton />;
   if (error) return <p>Error loading cast: {error.message}</p>;
   if (!data) return null;
 
@@ -41,7 +42,7 @@ const Cast: React.FC<CastProps> = ({ movieId }) => {
               src={
                 actor.profile_path
                   ? `https://image.tmdb.org/t/p/w200${actor.profile_path}`
-                  : "https://via.placeholder.com/200x300?text=No+Image"
+                  : "https://placehold.co/200x300/png?text=No+Image"
               }
               alt={actor.name}
               className="w-32 h-48 object-cover rounded-lg shadow-md"

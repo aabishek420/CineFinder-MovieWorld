@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import TrailerSkeleton from "../Skeletons/TrailerSkeleton";
 
 const Trailer: React.FC<TrailerProps> = ({ movieId }) => {
     const fetchVideos = async (): Promise<Video[]> => {
@@ -22,13 +23,14 @@ const Trailer: React.FC<TrailerProps> = ({ movieId }) => {
         enabled: !!movieId,
     });
 
-    if (isLoading) return <p>Loading videos...</p>;
+    if (isLoading) return <TrailerSkeleton />;
     if (error) return <p>Error loading videos: {error.message}</p>;
-    if (!data || data.length === 0) return <p>No videos available</p>;
+    if (!data || data.length === 0) return <p className="m-6 text-center text-base-content/80">No videos available</p>;
 
 
     const trailers = data.filter(
         (video) => video.site === "YouTube" && video.type === "Trailer"
+    
     );
 
     return (
@@ -41,7 +43,7 @@ const Trailer: React.FC<TrailerProps> = ({ movieId }) => {
                             <div key={video.id} className="w-full">
                                 <iframe
                                     className="w-full h-64 md:h-80 rounded-lg shadow-lg"
-                                    src={`https://www.youtube.com/embed/${video.key}`}
+                                    src={video.key ? `https://www.youtube.com/embed/${video.key}`  : `https://placehold.co/500x300/png?text=No+Video`}
                                     title={video.name}
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen

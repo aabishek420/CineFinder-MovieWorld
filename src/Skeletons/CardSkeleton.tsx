@@ -4,7 +4,7 @@ import React from 'react'
 const CardSkeleton = () => {
   return (
     <div className='flex flex-col'>
-      <Skeleton animation="wave" variant='rectangle' height={200} width={150} style={{ marginBottom: 0 }} sx={
+      <Skeleton animation="wave" variant='rectangular' height={200} width={150} style={{ marginBottom: 0 }} sx={
             {
                 bgcolor: (theme) =>
       theme.palette.mode === "dark" ? "grey.700" : "grey.500",
