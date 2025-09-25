@@ -143,9 +143,6 @@ Got it! Here's the **UI Preview** section formatted to match your existing READM
 
 ---
 
-
-Perfect! Here’s a **compact UI Preview** section for your README with only the **Home Page, Favorites Page, and Movie Details Page**, formatted to match your existing headings style:
-
 ---
 
 ## 🖼️ UI Preview
