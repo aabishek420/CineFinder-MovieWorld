@@ -139,9 +139,8 @@ VITE_TMDB_API_KEY
 VITE_TMDB_BASE_URL
 ```
 
-Got it! Here's the **UI Preview** section formatted to match your existing README headings style:
 
----
+
 
 ---
 
@@ -173,9 +172,6 @@ Got it! Here's the **UI Preview** section formatted to match your existing READM
 
 ---
 
-## License
-
-This project is licensed under the MIT License.
 
 ---
 
