@@ -1,4 +1,3 @@
-import React from 'react'
 import { CiStar } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import { useFavourites } from '../contexts/FavouriteContext';
@@ -43,7 +42,7 @@ const MovieCard:React.FC<MovieCardProps> = ({movie}) => {
 />
 
         <h2 className='text-sm truncate w-50 text-center font-bold'>{movie.title}</h2>
-        <div className='flex justify-between w-full px-2 text-sm items-center px-8'>
+        <div className='flex justify-between w-full  text-sm items-center px-8'>
             <div className='flex flex-row items-center justify-center gap-1 text-primary/90 '>
                 <CiStar/>
                 <p>{Math.ceil(movie.vote_average)/2}</p>

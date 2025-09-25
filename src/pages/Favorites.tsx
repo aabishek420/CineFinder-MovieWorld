@@ -2,7 +2,7 @@ import { useFavourites } from "../contexts/FavouriteContext";
 import MovieCard from "../components/MovieCard";
 
 export const Favorites = () => {
-  const { favourites,addToFavourites,isFavorite } : any = useFavourites();
+  const { favourites } : any = useFavourites();
 
   return (
     <div className="p-4">
