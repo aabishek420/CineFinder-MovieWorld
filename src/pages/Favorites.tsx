@@ -2,7 +2,7 @@ import { useFavourites } from "../contexts/FavouriteContext";
 import MovieCard from "../components/MovieCard";
 
 export const Favorites = () => {
-  const { favourites } : any = useFavourites();
+  const { favourites }: any = useFavourites();
 
   return (
     <div className="p-4">
@@ -12,7 +12,7 @@ export const Favorites = () => {
         <p className="text-center text-base-content/80">No favorite movies yet.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {favourites.map((movie:any) => (
+          {favourites.map((movie: any) => (
             <div
               key={movie.id}
             >

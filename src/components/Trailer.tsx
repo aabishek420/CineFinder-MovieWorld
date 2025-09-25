@@ -29,20 +29,20 @@ const Trailer: React.FC<TrailerProps> = ({ movieId }) => {
 
     const trailers = data.filter(
         (video) => video.site === "YouTube" && video.type === "Trailer"
-    
+
     );
 
     return (
         <div className="bg-base-100">
             <div className="p-6">
-                   <h2 className="text-xl font-bold mb-4 ">Trailers & Media</h2>
+                <h2 className="text-xl font-bold mb-4 ">Trailers & Media</h2>
                 <div className="max-w-6xl mx-auto p-5">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {trailers.map((video) => (
                             <div key={video.id} className="w-full">
                                 <iframe
                                     className="w-full h-64 md:h-80 rounded-lg shadow-lg"
-                                    src={video.key ? `https://www.youtube.com/embed/${video.key}`  : `https://placehold.co/500x300/png?text=No+Video`}
+                                    src={video.key ? `https://www.youtube.com/embed/${video.key}` : `https://placehold.co/500x300/png?text=No+Video`}
                                     title={video.name}
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen

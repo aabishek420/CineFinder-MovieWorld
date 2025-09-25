@@ -31,34 +31,34 @@ const Navbar: React.FC = () => {
             localStorage.setItem('theme', 'light');
         }
     };
-  
+
     return (
-       <nav className="flex justify-between items-center p-4 bg-base-100 text-base-content relative z-50">
+        <nav className="flex justify-between items-center p-4 bg-base-100 text-base-content relative z-50">
 
             <div>
                 <h1 className='text-xl font-bold text-primary lg:text-4xl'>
-                <a href="/" className='flex flex-row items-center gap-2'>
-                <GiFilmProjector className='text-5xl'/> <span>CineFinder</span>
-                </a></h1> 
+                    <a href="/" className='flex flex-row items-center gap-2'>
+                        <GiFilmProjector className='text-5xl' /> <span>CineFinder</span>
+                    </a></h1>
             </div>
             <div className='flex gap-4 lg:hidden justify-center items-center'>
                 <div>
                     {
-                            isDarkMode ? (
-                                <button onClick={toggleDarkMode} className='text-yellow-400'>
-                                    <IoSunny className='w-6 h-6'/>
-                                </button>
-                            ) : (
-                                <button onClick={toggleDarkMode} className='text-primary'>
-                                    <FaMoon className='w-5 h-5'/>
-                                </button>
-                            )
-                        }
+                        isDarkMode ? (
+                            <button onClick={toggleDarkMode} className='text-yellow-400'>
+                                <IoSunny className='w-6 h-6' />
+                            </button>
+                        ) : (
+                            <button onClick={toggleDarkMode} className='text-primary'>
+                                <FaMoon className='w-5 h-5' />
+                            </button>
+                        )
+                    }
                 </div>
                 <div>
                     <button onClick={() => setIsMenuOpen(!isMenuOpen)} className='lg:hidden'>
-                    {isMenuOpen ? <IoClose className='w-6 h-6'/> : <FaBars className='w-6 h-6'/>}
-                </button>
+                        {isMenuOpen ? <IoClose className='w-6 h-6' /> : <FaBars className='w-6 h-6' />}
+                    </button>
                 </div>
             </div>
             <div className='hidden lg:block'>
@@ -67,28 +67,28 @@ const Navbar: React.FC = () => {
                         {
                             isDarkMode ? (
                                 <button onClick={toggleDarkMode} className='text-yellow-400 cursor-pointer flex items-center justify-center'>
-                                    <IoSunny className='w-6 h-6'/>
+                                    <IoSunny className='w-6 h-6' />
                                 </button>
                             ) : (
                                 <button onClick={toggleDarkMode} className='text-primary cursor-pointer flex items-center justify-center'>
-                                    <FaMoon className='w-5 h-5'/>
+                                    <FaMoon className='w-5 h-5' />
                                 </button>
                             )
                         }
                     </div>
                     <div className='flex gap-6'>
                         <li
-                        className="cursor-pointer"
-                       
-                    >
-                        <NavLink style={{display:'flex', alignItems:'center',gap:'2px',justifyContent:'center'}} className={({isActive})=>isActive ? "text-primary" : ""} to={'/'}><IoIosHome/> <span>Home</span></NavLink>
-                    </li>
-                    <li
-                        className="cursor-pointer"
-                       
-                    >
-                        <NavLink style={{display:'flex', alignItems:'center',gap:'5px',justifyContent:'center'}} className={({isActive})=>isActive ? "text-primary" : ""} to={'/favorites'}><FaHeart/> <span>Favorites</span></NavLink>
-                    </li>
+                            className="cursor-pointer"
+
+                        >
+                            <NavLink style={{ display: 'flex', alignItems: 'center', gap: '2px', justifyContent: 'center' }} className={({ isActive }) => isActive ? "text-primary" : ""} to={'/'}><IoIosHome /> <span>Home</span></NavLink>
+                        </li>
+                        <li
+                            className="cursor-pointer"
+
+                        >
+                            <NavLink style={{ display: 'flex', alignItems: 'center', gap: '5px', justifyContent: 'center' }} className={({ isActive }) => isActive ? "text-primary" : ""} to={'/favorites'}><FaHeart /> <span>Favorites</span></NavLink>
+                        </li>
 
                     </div>
                 </ul>
@@ -97,22 +97,22 @@ const Navbar: React.FC = () => {
             {
                 isMenuOpen && (
                     <div className='absolute top-16 right-4 bg-base-100 p-4 rounded-lg shadow-md lg:hidden '>
-                <ul className='flex gap-4 text-lg flex-col'>
-                    <li
-                        className="cursor-pointer "
-                       onClick={()=> setIsMenuOpen(false)}
-                    >
-                        <NavLink style={{display:'flex', alignItems:'center',gap:'2px',justifyContent:'center'}} className={({isActive})=>isActive ? "text-primary" : ""} to={'/'}><IoIosHome/> <span>Home</span></NavLink>
-                    </li>
-                    <li
-                        className="cursor-pointer "
-                       onClick={()=> setIsMenuOpen(false)}
-                    >
-                        <NavLink style={{display:'flex', alignItems:'center',gap:'5px',justifyContent:'center'}} className={({isActive})=>isActive ? "text-primary" : ""} to={'/favorites'}><FaHeart/> <span>Favorites</span></NavLink>
-                    </li>
+                        <ul className='flex gap-4 text-lg flex-col'>
+                            <li
+                                className="cursor-pointer "
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                <NavLink style={{ display: 'flex', alignItems: 'center', gap: '2px', justifyContent: 'center' }} className={({ isActive }) => isActive ? "text-primary" : ""} to={'/'}><IoIosHome /> <span>Home</span></NavLink>
+                            </li>
+                            <li
+                                className="cursor-pointer "
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                <NavLink style={{ display: 'flex', alignItems: 'center', gap: '5px', justifyContent: 'center' }} className={({ isActive }) => isActive ? "text-primary" : ""} to={'/favorites'}><FaHeart /> <span>Favorites</span></NavLink>
+                            </li>
 
-                </ul>
-            </div>
+                        </ul>
+                    </div>
                 )
             }
 

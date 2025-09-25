@@ -15,7 +15,7 @@ const Cast: React.FC<CastProps> = ({ movieId }) => {
         },
       }
     );
-    return res.data.cast; 
+    return res.data.cast;
   };
 
   const { data, isLoading, error } = useQuery<CastMember[], Error>({
@@ -47,7 +47,7 @@ const Cast: React.FC<CastProps> = ({ movieId }) => {
               className="w-32 h-48 object-cover rounded-lg shadow-md"
             />
             <p className="text-sm mt-2 font-semibold">{actor.name}</p>
-           <p className="text-sm">{actor.character}</p>
+            <p className="text-sm">{actor.character}</p>
           </div>
         ))}
       </div>

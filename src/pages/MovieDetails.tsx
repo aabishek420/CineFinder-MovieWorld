@@ -45,7 +45,7 @@ const MovieDetails = () => {
 
         <div className="relative flex items-center flex-col lg:flex-row gap-8 z-10 max-w-6xl mx-auto text-white">
           <img
-            src={data.poster_path ?`https://image.tmdb.org/t/p/w500${data.poster_path}`: `https://placehold.co/500x750/png?text=No+Image`}
+            src={data.poster_path ? `https://image.tmdb.org/t/p/w500${data.poster_path}` : `https://placehold.co/500x750/png?text=No+Image`}
             alt={data.title}
             className="w-54 lg:w-67 rounded-lg shadow-lg "
           />
@@ -76,14 +76,14 @@ const MovieDetails = () => {
 
             <div className="mt-4">
               <p className="font-semibold">Ratings</p>
-              <p className="text-gray-300">{Math.ceil(data.vote_average)/2}/5</p>
+              <p className="text-gray-300">{Math.ceil(data.vote_average) / 2}/5</p>
             </div>
           </div>
         </div>
       </div>
       <Cast movieId={movie_id!} />
       <Trailer movieId={movie_id!} />
-     
+
     </>
   );
 };

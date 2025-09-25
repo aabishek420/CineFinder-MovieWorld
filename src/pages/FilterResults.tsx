@@ -16,7 +16,7 @@ const FilterResults = () => {
     const queryParams = new URLSearchParams();
     if (genre) queryParams.append('with_genres', genre);
     if (year) queryParams.append('primary_release_year', year);
-    if (rating) queryParams.append('vote_average.gte', String(Number(rating) * 2)); 
+    if (rating) queryParams.append('vote_average.gte', String(Number(rating) * 2));
     const res = await axios.get(
       `${import.meta.env.VITE_API_BASE_URL}/discover/movie?${queryParams.toString()}`,
       {

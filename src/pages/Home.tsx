@@ -30,20 +30,20 @@ const Home = () => {
 
   return (
     <>
-  
-    <div className='p-10'>
-      <SearchBar />
-      <FilterPanel />
-      <h1 className='text-xl md:text-2xl lg:text-3xl text-center lg:text-left text-primary font-bold mb-5'>Trending Movies</h1>
-      <div className="grid grid-cols md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {data?.map((movie) => (
-          <Link key={movie.id} to={`/movie/${movie.id}`}>
-            <MovieCard movie={movie} />
-          </Link>
-        ))}
+
+      <div className='p-10'>
+        <SearchBar />
+        <FilterPanel />
+        <h1 className='text-xl md:text-2xl lg:text-3xl text-center lg:text-left text-primary font-bold mb-5'>Trending Movies</h1>
+        <div className="grid grid-cols md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          {data?.map((movie) => (
+            <Link key={movie.id} to={`/movie/${movie.id}`}>
+              <MovieCard movie={movie} />
+            </Link>
+          ))}
+        </div>
       </div>
-     </div>   
-      </>
+    </>
   )
 }
 

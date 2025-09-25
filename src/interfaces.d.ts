@@ -5,7 +5,7 @@ interface Movie {
   backdrop_path: string;
   release_date: string;
   vote_average: number;
-   adult: boolean;
+  adult: boolean;
   runtime: number;
   genres: { id: number; name: string }[];
   poster_path?: string;
@@ -13,14 +13,12 @@ interface Movie {
 }
 
 interface MovieCardProps {
-    movie: Movie;
+  movie: Movie;
 }
 
 interface AllMovieCardProps {
-    movie: Movie;
+  movie: Movie;
 }
-
-
 
 interface CastMember {
   id: number;
@@ -43,7 +41,7 @@ interface Video {
   published_at: string;
 }
 
- interface TrailerProps {
+interface TrailerProps {
   movieId: string;
 }
 

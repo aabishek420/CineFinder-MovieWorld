@@ -7,12 +7,12 @@ export const FavouritesContext = createContext<any>(null);
 export const useFavourites = () => useContext(FavouritesContext);
 
 // Provider Component
-const FavouritesProvider = ({ children } : any) => {
- const [favourites, setFavourites] = useState<Movie[]>([]);
+const FavouritesProvider = ({ children }: any) => {
+  const [favourites, setFavourites] = useState<Movie[]>([]);
 
 
-  const addToFavourites = (movie : any) => {
-    if (isFavorite(movie.id)){
+  const addToFavourites = (movie: any) => {
+    if (isFavorite(movie.id)) {
       removeFromFavourites(movie.id);
       return;
     }
@@ -20,11 +20,11 @@ const FavouritesProvider = ({ children } : any) => {
   };
 
   // Remove movie by ID
-  const removeFromFavourites = (movieId : number) => {
-    setFavourites((prev ) => prev.filter((movie) => movie.id !== movieId));
+  const removeFromFavourites = (movieId: number) => {
+    setFavourites((prev) => prev.filter((movie) => movie.id !== movieId));
   };
 
-  const isFavorite = (movieId:number) => {
+  const isFavorite = (movieId: number) => {
     return favourites.some((movie) => movie.id === movieId);
   }
 
