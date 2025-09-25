@@ -1,4 +1,3 @@
-import React from "react";
 import { useFavourites } from "../contexts/FavouriteContext";
 import MovieCard from "../components/MovieCard";
 

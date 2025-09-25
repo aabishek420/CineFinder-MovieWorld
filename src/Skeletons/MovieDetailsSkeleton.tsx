@@ -1,5 +1,5 @@
 import { Skeleton } from '@mui/material'
-import React from 'react'
+
 
 const MovieDetailsSkeleton = () => {
   return (
