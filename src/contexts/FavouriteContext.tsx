@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useContext, useState } from "react";
+import { createContext, useEffect, useContext, useState } from "react";
 
 // Create Context
 export const FavouritesContext = createContext<any>(null);
