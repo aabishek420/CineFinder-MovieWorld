@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import Cast from "./Cast";
 import Trailer from "../components/Trailer";
 import MovieDetailsSkeleton from "../Skeletons/MovieDetailsSkeleton";
-// import Posters from "./Posters";
+
 
 
 const MovieDetails = () => {
@@ -76,15 +76,15 @@ const MovieDetails = () => {
 
 
             <div className="mt-4">
-              <p className="font-semibold">Director Name</p>
-              <p className="text-gray-300">Abishek</p>
+              <p className="font-semibold">Ratings</p>
+              <p className="text-gray-300">{Math.ceil(data.vote_average)/2}/5</p>
             </div>
           </div>
         </div>
       </div>
       <Cast movieId={movie_id!} />
       <Trailer movieId={movie_id!} />
-      {/* <Posters movieId={movie_id!} /> */}
+     
     </>
   );
 };

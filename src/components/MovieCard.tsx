@@ -37,7 +37,11 @@ const MovieCard:React.FC<MovieCardProps> = ({movie}) => {
           }`}
         />
       </button>
-        <img className='w-50' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`${movie.title}`} />
+       <img className="w-50" src={ movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+      : `https://placehold.co/500x750/png?text=No+Image`}
+  alt={movie.title || "No poster available"}
+/>
+
         <h2 className='text-sm truncate w-50 text-center font-bold'>{movie.title}</h2>
         <div className='flex justify-between w-full px-2 text-sm items-center px-8'>
             <div className='flex flex-row items-center justify-center gap-1 text-primary/90 '>
