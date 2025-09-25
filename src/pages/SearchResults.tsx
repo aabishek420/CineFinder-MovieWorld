@@ -31,7 +31,7 @@ const SearchResults = () => {
     });
     if (isLoading) return <FilterSkeleton />;
    if (error) return <div>Error: {(error as Error)?.message || String(error)}</div>;
-    if (!data || data.length === 0) return <div>No results found for "{searchTerm}"</div>
+    if (!data || data.length === 0) return <div className="text-center font-semibold mt-5 text-base-content/80">No results found for "{searchTerm}"</div>
 
 
   return (

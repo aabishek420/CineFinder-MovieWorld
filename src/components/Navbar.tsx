@@ -33,7 +33,8 @@ const Navbar: React.FC = () => {
     };
   
     return (
-        <nav className='flex justify-between items-center p-4 bg-base-100 text-base-content'>
+       <nav className="flex justify-between items-center p-4 bg-base-100 text-base-content relative z-50">
+
             <div>
                 <h1 className='text-xl font-bold text-primary lg:text-4xl'>
                 <a href="/" className='flex flex-row items-center gap-2'>
